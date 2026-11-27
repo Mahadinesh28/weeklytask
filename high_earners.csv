@@ -1,0 +1,19 @@
+high_earners = []
+
+for emp in employees:
+    if emp["salary"] > 50000:
+        high_earners.append(emp)
+        
+with open("high_earners.csv", "w", newline="") as file:
+
+    writer = csv.DictWriter(
+        file,
+        fieldnames=employees[0].keys()
+    )
+
+    writer.writeheader()
+    writer.writerows(high_earners)
+
+print("High earners CSV created")
+print("Rows:", len(employees))
+print("High earners:", len(high_earners))
