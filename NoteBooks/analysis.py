@@ -37,13 +37,19 @@ df = pd.read_csv("../employees.csv")
 
 print(df.head())
 
-print(df.info())
+df.info()
 
 print(df.describe())
 
-# %%
-%timeit df["salary"].mean()
+print("Average Salary:", df["salary"].mean())
 
+print("Total Employees:", len(df))
+
+print("Columns:", df.columns)
+
+df.info()
+
+print(df.describe())
 # %%
 print("Total Employees:", len(df))
 
@@ -98,7 +104,7 @@ plt.ylabel("Average Salary")
 
 plt.show()
 
-# %%
+#%%
 plt.figure(figsize=(8, 5))
 
 avg_salary.plot(kind="bar")
